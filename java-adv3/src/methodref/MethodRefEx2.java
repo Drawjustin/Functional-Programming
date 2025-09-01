@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 public class MethodRefEx2 {
     public static void main(String[] args) {
-        // 1. 정적 메서드 참고
+        // 1. 정적 메서드 참조
         Function<String,String> staticMethod1 = (name) -> Person.greetingWithName(name);
         Function<String,String> staticMethod2 = Person::greetingWithName;
 
