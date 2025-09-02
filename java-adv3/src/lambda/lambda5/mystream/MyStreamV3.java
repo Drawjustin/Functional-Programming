@@ -48,4 +48,9 @@ public class MyStreamV3<T> {
         }
     }
 
+    // 추가
+    public T getFirst() {
+        return internalList.get(0);
+    }
+
 }
