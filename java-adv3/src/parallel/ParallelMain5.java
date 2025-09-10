@@ -14,7 +14,7 @@ public class ParallelMain5 {
 
         // 요청 풀 추가
         ExecutorService requestPool = Executors.newFixedThreadPool(100);
-        int nThreads = 3; // 1, 2, 3, 10, 20
+        int nThreads = 20; // 1, 2, 3, 10, 20
         for (int i = 1; i <= nThreads; i++) {
             String requestName = "request" + i;
             requestPool.submit(() -> logic(requestName));
@@ -27,7 +27,7 @@ public class ParallelMain5 {
         log("[" + requestName + "] START");
         long startTime = System.currentTimeMillis();
         int sum = IntStream.rangeClosed(1, 4)
-                .parallel()
+//                .parallel()
                 .map(i -> HeavyJob.heavyTask(i, requestName))
                 .reduce(0, (a, b) -> a + b);
         long endTime = System.currentTimeMillis();
